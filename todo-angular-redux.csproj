@@ -34,9 +34,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\actions.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\todo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\store\actions.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\store\store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\store\todo.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\assets\images\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

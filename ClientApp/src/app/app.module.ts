@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { TodoActions } from './todo-actions'
 
 
 import { AppComponent } from './app.component';
@@ -21,7 +22,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     FormsModule,
     NgReduxModule
   ],
-  providers: [],
+  providers: [TodoActions],
   bootstrap: [AppComponent]
 })
 

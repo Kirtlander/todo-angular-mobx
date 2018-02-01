@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IAppState, rootReducer, INITIAL_STATE } from './store/store';
-import { TodoActions } from './todo-actions'
+import { TodoActions } from './store/todo-actions'
 
 
 import { AppComponent } from './app.component';

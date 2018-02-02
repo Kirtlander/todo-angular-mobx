@@ -5,7 +5,7 @@ import { IAppState } from './store';
 import { ITodo } from './todo'
 
 /**
- * Injectable Action Creators for store
+ * Injectable Todo Action Creators for store
  * @tutorial  https://github.com/angular-redux/store/blob/master/articles/action-creator-service.md
  */
 @Injectable()

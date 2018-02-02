@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IAppState, rootReducer, INITIAL_STATE } from './store/store';
 import { TodoActions } from './store/todo-actions'
+import { TimeMachineActions } from './store/time-machine-actions';
+import { TimeMachineMiddleware } from './middleware/time-machine';
 
 
 import { AppComponent } from './app.component';
@@ -22,12 +24,18 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     FormsModule,
     NgReduxModule
   ],
-  providers: [TodoActions],
+  // app-level DI services
+  providers: [TodoActions, TimeMachineMiddleware, TimeMachineActions],
   bootstrap: [AppComponent]
 })
 
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>) {
-    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  constructor(
+    ngRedux: NgRedux<IAppState>,
+    timeMachine: TimeMachineMiddleware,
+    timeMachineActions: TimeMachineActions) {
+    let middleware = [timeMachine.middleware];
+    ngRedux.configureStore(rootReducer, INITIAL_STATE, middleware);
+    timeMachineActions.loadState();
   }
 }

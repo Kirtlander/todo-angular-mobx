@@ -29,11 +29,15 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\actions.ts" />
+    <None Remove="ClientApp\src\app\middleware\log-action.ts" />
+    <None Remove="ClientApp\src\app\middleware\time-machine.ts" />
     <None Remove="ClientApp\src\app\store.ts" />
     <None Remove="ClientApp\src\app\todo.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\middleware\time-machine.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\middleware\log-action.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\store\actions.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\store\store.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\store\todo.ts" />

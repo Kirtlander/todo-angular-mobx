@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import * as actions from './actions'
-//import * as Redux from 'redux';
 import { IAppState } from './store';
 import { ITodo } from './todo'
 

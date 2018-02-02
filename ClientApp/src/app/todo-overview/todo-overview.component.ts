@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-//import { IAppState } from '../store/store';
-//import { REMOVE_ALL_TODOS } from '../store/actions';
 import { TodoActions } from '../store/todo-actions'
 
 
@@ -22,6 +20,5 @@ export class TodoOverviewComponent implements OnInit {
 
   clearTodos() {
     this.actions.removeAllTodos();
-    //this.ngRedux.dispatch({ type: REMOVE_ALL_TODOS });
   }
 }

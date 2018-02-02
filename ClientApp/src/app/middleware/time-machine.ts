@@ -12,6 +12,10 @@ export class TimeMachineMiddleware {
 
     switch (action.type) {
 
+    // this prevents a stack overflow if we dispatch an ADD_ACTION action
+    case actions.ADD_ACTION:
+      break;
+
     case actions.SAVE_ACTIONS:
       // actual save happens here in middleware (potentially async), not in reducer
       // in addition to representing the reducer, the action is also a message to the time machine
@@ -27,7 +31,7 @@ export class TimeMachineMiddleware {
 
     default:
       // TODO: this causes a stack overflow with the middleware router!!!
-      //store.dispatch({ type: actions.ADD_ACTION, action: action });
+      store.dispatch({ type: actions.ADD_ACTION, action: action });
       break;
     }
 

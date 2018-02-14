@@ -1,11 +1,13 @@
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { Reducer } from 'redux';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IAppState, rootReducer, INITIAL_STATE } from './store/store';
-import { TodoActions } from './store/todo-actions'
-import { TimeMachineActions } from './store/time-machine-actions';
-import { TimeMachineMiddleware } from './middleware/time-machine';
+import { IAppState } from './store/app-state';
+import { rootReducer } from './store/reducers/root-reducer';
+import { Actions as TodoActions } from './store/reducers/todos-reducer'
+import { Actions as TimeMachineActions } from './store/reducers/time-machine-state-reducer';
+import { TimeMachineMiddleware } from './store/middleware/time-machine';
 
 
 import { AppComponent } from './app.component';
@@ -35,7 +37,7 @@ export class AppModule {
     timeMachine: TimeMachineMiddleware,
     timeMachineActions: TimeMachineActions) {
     let middleware = [timeMachine.middleware];
-    ngRedux.configureStore(rootReducer, INITIAL_STATE, middleware);
+    ngRedux.configureStore(rootReducer as Reducer<IAppState>, {} as IAppState, middleware);
     timeMachineActions.loadState();
   }
 }

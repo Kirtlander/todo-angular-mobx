@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { ITodo } from '../store/todo';
-import { TodoActions } from '../store/todo-actions'
+import { Actions as TodoActions } from '../store/reducers/todos-reducer'
 
 @Component({
   selector: 'app-todo-list',

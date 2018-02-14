@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as actions from '../store/actions';
-import { IAppState } from '../store/store';
+import * as actions from '../../store/reducers/time-machine-state-reducer';
 
 /**
  * Provider for middleware that adds the current action to the state
@@ -30,7 +29,6 @@ export class TimeMachineMiddleware {
       break;
 
     default:
-      // TODO: this causes a stack overflow with the middleware router!!!
       store.dispatch({ type: actions.ADD_ACTION, action: action });
       break;
     }

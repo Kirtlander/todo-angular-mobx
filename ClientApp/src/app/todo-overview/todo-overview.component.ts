@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
-import { TodoActions } from '../store/todo-actions'
-import { TimeMachineActions } from '../store/time-machine-actions'
+import { Actions as TodoActions } from '../store/reducers/todos-reducer'
+import { Actions as TimeMachineActions } from '../store/reducers/time-machine-state-reducer'
 
 
 @Component({

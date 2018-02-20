@@ -3,6 +3,7 @@ import { Reducer } from 'redux';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Ng2MobxModule } from 'ng2-mobx';
 import { IAppState } from './store/app-state';
 import { rootReducer } from './store/reducers/root-reducer';
 import { Actions as TodoActions } from './store/reducers/todos-reducer'
@@ -24,7 +25,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    NgReduxModule
+    NgReduxModule,
+    Ng2MobxModule
   ],
   // app-level DI services
   providers: [TodoActions, TimeMachineMiddleware, TimeMachineActions],

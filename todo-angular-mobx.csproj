@@ -31,28 +31,23 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\actions.ts" />
-    <None Remove="ClientApp\src\app\store\middleware\log-action.ts" />
-    <None Remove="ClientApp\src\app\store\middleware\time-machine.ts" />
+    <None Remove="ClientApp\src\app\state\root-store.ts" />
+    <None Remove="ClientApp\src\app\state\todo-store.ts" />
     <None Remove="ClientApp\src\app\store.ts" />
-    <None Remove="ClientApp\src\app\store\action.ts" />
-    <None Remove="ClientApp\src\app\store\reducers\root-reducer.ts" />
-    <None Remove="ClientApp\src\app\store\time-machine-state-reducer.ts" />
-    <None Remove="ClientApp\src\app\store\time-machine-state.ts" />
-    <None Remove="ClientApp\src\app\store\todos-reducer.ts" />
+    <None Remove="ClientApp\src\app\state\action.ts" />
+    <None Remove="ClientApp\src\app\state\time-machine-state-reducer.ts" />
+    <None Remove="ClientApp\src\app\state\time-machine-state.ts" />
+    <None Remove="ClientApp\src\app\state\todos-reducer.ts" />
     <None Remove="ClientApp\src\app\todo.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\store\middleware\time-machine.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\middleware\log-action.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\action.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\actions.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\reducers\root-reducer.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\reducers\time-machine-state-reducer.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\time-machine-state.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\reducers\todos-reducer.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\app-state.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\store\todo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\action.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\root-store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\time-machine-state.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\app-state.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\todo-store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\state\todo.ts" />
   </ItemGroup>
 
   <ItemGroup>

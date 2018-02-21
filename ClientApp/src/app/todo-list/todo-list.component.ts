@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { select } from '@angular-redux/store';
-import { ITodo } from '../store/todo';
-import { Actions as TodoActions } from '../store/reducers/todos-reducer'
+import { ITodo } from '../state/todo';
+import { RootStore } from '../state/root-store';
+import { TodoStore } from '../state/todo-store';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,7 +10,10 @@ import { Actions as TodoActions } from '../store/reducers/todos-reducer'
 })
 export class TodoListComponent implements OnInit {
 
-  @select() todos;
+  todoStore: TodoStore;
+
+  todos: ITodo[];
+
   model: ITodo = {
     id: 0,
     description: "",
@@ -19,20 +22,24 @@ export class TodoListComponent implements OnInit {
     isCompleted: false
   };
 
-  constructor(private actions: TodoActions) { }
+  constructor(private rootStore: RootStore) {
+    this.todoStore = rootStore.todoStore;
+    //this.model = this.todoStore.createTodo();
+    this.todos = this.todoStore.todos;
+  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.actions.addTodo(this.model);
+    this.todoStore.addTodo(this.model);
   }
 
   toggleTodo(todo) {
-    this.actions.toggleTodo(todo.id);
+    this.todoStore.toggleTodo(todo.id);
   }
 
   removeTodo(todo) {
-    this.actions.removeTodo(todo.id);
+    this.todoStore.removeTodo(todo.id);
   }
 }

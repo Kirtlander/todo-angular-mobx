@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { select } from '@angular-redux/store';
-import { Actions as TodoActions } from '../store/reducers/todos-reducer'
-import { Actions as TimeMachineActions } from '../store/reducers/time-machine-state-reducer'
+import { ITodo } from '../state/todo';
+import { RootStore } from '../state/root-store';
 
 
 @Component({
@@ -11,19 +10,21 @@ import { Actions as TimeMachineActions } from '../store/reducers/time-machine-st
 })
 export class TodoOverviewComponent implements OnInit {
 
-  @select() todos;
-  @select() lastUpdate;
+  todos: ITodo[];
+  lastUpdate;
 
-  constructor(private todoActions: TodoActions, private timeMachineActions: TimeMachineActions) { }
+  constructor(private rootStore: RootStore) {
+    this.todos = rootStore.todoStore.todos;
+  }
 
   ngOnInit() {
   }
 
   clearTodos() {
-    this.todoActions.removeAllTodos();
+    this.rootStore.todoStore.clear();
   }
 
   save() {
-    this.timeMachineActions.saveActions();
+    this.rootStore.todoStore.save();
   }
 }

@@ -36,7 +36,6 @@
     <None Remove="ClientApp\src\app\store.ts" />
     <None Remove="ClientApp\src\app\state\action.ts" />
     <None Remove="ClientApp\src\app\state\time-machine-state-reducer.ts" />
-    <None Remove="ClientApp\src\app\state\time-machine-state.ts" />
     <None Remove="ClientApp\src\app\state\todos-reducer.ts" />
     <None Remove="ClientApp\src\app\todo.ts" />
   </ItemGroup>
@@ -44,7 +43,6 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\state\action.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\state\root-store.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\state\time-machine-state.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\state\app-state.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\state\todo-store.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\state\todo.ts" />

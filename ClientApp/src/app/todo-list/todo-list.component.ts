@@ -16,15 +16,14 @@ export class TodoListComponent implements OnInit {
 
   model: ITodo = {
     id: 0,
-    description: "",
-    responsible: "",
-    priority: "low",
+    description: '',
+    responsible: '',
+    priority: 'low',
     isCompleted: false
   };
 
   constructor(private rootStore: RootStore) {
     this.todoStore = rootStore.todoStore;
-    //this.model = this.todoStore.createTodo();
     this.todos = this.todoStore.todos;
   }
 

@@ -21,7 +21,7 @@ import { TodoStore } from './state/todo-store';
   imports: [
     BrowserModule,
     FormsModule,
-    MobxAngularModule
+    MobxAngularModule,
   ],
   // app-level DI services
   providers: [RootStore, TodoStore],
@@ -31,7 +31,7 @@ import { TodoStore } from './state/todo-store';
 export class AppModule {
   constructor(
     rootStore: RootStore) {
-    let todos = rootStore.todoStore.todos;
+    const todos = rootStore.todoStore.todos;
     rootStore.todoStore.load();
   }
 }
